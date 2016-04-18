@@ -1,10 +1,18 @@
-module Main(
-    iniciarJogo
-    )where
+menu = do
+	putStrLn "-----Bem-Vindo ao jogo da Velha!-----"
+	putStrLn "1- Novo Jogo"
+	putStrLn "2- Sair"
+	putStrLn "Opcao"
+	op <- getChar
+	getChar
+	trataOp(op)
 
-import Menu
---import Tabela
+trataOp '2' = do
+	putStrLn ("Volte logo! :D")
 
+trataOp '1' = do
+	putStrLn ("NOVO JOGO")
 
-iniciarJogo = do
-    Menu
+trataOp _ = do
+	putStrLn ("A opcao digitava e invalida")
+	menu
