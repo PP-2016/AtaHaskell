@@ -2,6 +2,7 @@ module NovoJogo (
     novoJogo
     )where
 
+--import Tabela
 import RodarJogo
 
 novoJogo :: Jogadores -> Nome -> Nome -> IO Jogadores
