@@ -1,3 +1,9 @@
+module RodarJogo (
+    rodarJogo
+    )where
+
+import Menu
+
 rodarJogo :: Jogadores -> Tabela -> Nome -> Nome -> Vez -> IO Jogadores
 rodarJogo dados tabela jogador1 jogador2 vez = do
                     -- imprime o tabuleiro
@@ -12,37 +18,37 @@ rodarJogo dados tabela jogador1 jogador2 vez = do
                     if (venceuJogador1 tabela) then do
                         putStrLn ("Parábens " ++ jogador1 ++ "! Você venceu!!")
 
-                        -- abre o arquivo para escrita para atualizá-lo
-                        arq_escrita <- openFile "dados.txt" WriteMode
-                        hPutStrLn arq_escrita (show (atualizaPontuacao dados jogador1))
-                        hClose arq_escrita
+                        ---- abre o arquivo para escrita para atualizá-lo
+                        --arq_escrita <- openFile "dados.txt" WriteMode
+                        --hPutStrLn arq_escrita (show (atualizaPontuacao dados jogador1))
+                        --hClose arq_escrita
 
-                        -- abre o arquivo para leitura
-                        arq_leitura <- openFile "dados.txt" ReadMode
-                        dados_atualizados <- hGetLine arq_leitura
-                        hClose arq_leitura
+                        ---- abre o arquivo para leitura
+                        --arq_leitura <- openFile "dados.txt" ReadMode
+                        --dados_atualizados <- hGetLine arq_leitura
+                        --hClose arq_leitura
 
-                        putStr "\nPressione <Enter> para voltar ao menu..."
-                        getChar
-                        menu (read dados_atualizados)
+                        --putStr "\nPressione <Enter> para voltar ao menu..."
+                        --getChar
+                        --menu (read dados_atualizados)
                     else do
                         -- verifica se o jogador2 venceu
                         if (venceuJogador2 tabela) then do
                             putStrLn ("Parábens " ++ jogador2 ++ "! Você venceu!!")
 
-                            -- abre o arquivo para escrita para atualizá-lo
-                            arq_escrita <- openFile "dados.txt" WriteMode
-                            hPutStrLn arq_escrita (show (atualizaPontuacao dados jogador2))
-                            hClose arq_escrita
+                            ---- abre o arquivo para escrita para atualizá-lo
+                            --arq_escrita <- openFile "dados.txt" WriteMode
+                            --hPutStrLn arq_escrita (show (atualizaPontuacao dados jogador2))
+                            --hClose arq_escrita
 
-                            -- abre o arquivo para leitura
-                            arq_leitura <- openFile "dados.txt" ReadMode
-                            dados_atualizados <- hGetLine arq_leitura
-                            hClose arq_leitura
+                            ---- abre o arquivo para leitura
+                            --arq_leitura <- openFile "dados.txt" ReadMode
+                            --dados_atualizados <- hGetLine arq_leitura
+                            --hClose arq_leitura
 
-                            putStr "\nPressione <Enter> para voltar ao menu..."
-                            getChar
-                            menu (read dados_atualizados)
+                            --putStr "\nPressione <Enter> para voltar ao menu..."
+                            --getChar
+                            --menu (read dados_atualizados)
                         else do
                             -- verifica se houve empate
                             -- se o tamanho da intersecção entre "123456789" e "tabela" for 0, então deu empate

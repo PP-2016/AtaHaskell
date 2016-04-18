@@ -1,4 +1,8 @@
-import rodarJogo
+import RodarJogo
+
+module NovoJogo (
+    novoJogo
+    )where
 
 novoJogo :: Jogadores -> Nome -> Nome -> IO Jogadores
 novoJogo dados jogador1 jogador2 = do
