@@ -3,6 +3,7 @@ module RodarJogo (
     )where
 
 import Menu
+import NovoTabuleiro
 
 rodarJogo :: Jogadores -> Tabela -> Nome -> Nome -> Vez -> IO Jogadores
 rodarJogo dados tabela jogador1 jogador2 vez = do
