@@ -1,3 +1,5 @@
+import rodarJogo
+
 novoJogo :: Jogadores -> Nome -> Nome -> IO Jogadores
 novoJogo dados jogador1 jogador2 = do
                     putStrLn ("\nIniciando o jogo \"" ++
