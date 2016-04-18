@@ -11,6 +11,9 @@ mediaAritimetica :: [Float] -> Float
 mediaAritimetica xs = sum xs/ (fromIntegral $ length xs)
 
 
-variancia :: [Float] -> Float -> Float
-variancia [] = 0
-variancia (h:xs) lista=  h-mediaAritimetica lista
+some :: [Float]-> Float
+some [] = 0
+some xs = head(xs)-mediaAritimetica xs
+
+--variancia :: [Float] -> [Float]
+variancia xs = map some xs
